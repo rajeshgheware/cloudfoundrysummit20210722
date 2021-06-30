@@ -1,0 +1,1 @@
+helm install ingress stable/nginx-ingress
