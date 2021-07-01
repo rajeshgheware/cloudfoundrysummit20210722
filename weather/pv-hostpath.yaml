@@ -1,7 +1,8 @@
+# For elasticsearch
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-hostpath
+  name: pv-elasticsearch
 spec:
   storageClassName: local-storage
   capacity:
@@ -9,7 +10,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/mnt/data"
+    path: "/data/elasticsearch"
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -22,7 +23,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/prometheus-server"    
+    path: "/data/prometheus-server"    
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -35,4 +36,4 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: "/prometheus-alert-manager"    
+    path: "/data/prometheus-alert-manager"    
